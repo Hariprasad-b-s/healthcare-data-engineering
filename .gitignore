@@ -1,2 +1,12 @@
 synthea
 .DS_Store
+healthcare_de_project/raw_data/*/*
+healthcare_de_project/streaming_source/*/*
+
+healthcare_de_project/data_lake/bronze/batch_data/*/*
+healthcare_de_project/data_lake/bronze/batch_data/*
+healthcare_de_project/data_lake/silver/*/*
+healthcare_de_project/data_lake/gold/*/*
+cms data
+aws-manual
+.vscode/settings.json
