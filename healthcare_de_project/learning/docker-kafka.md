@@ -510,5 +510,5 @@ and the nested `resource` JSON round-trips intact.
 
 ## 9. What's next
 
-- A **Spark Structured Streaming** notebook that consumes `healthcare_fhir_stream`, parses each message's JSON payload, and writes it out partitioned by `resource_type` — into a **separate streaming bronze path** from the batch bronze data (decision made explicitly: batch and streaming bronze stay physically separate; they get reconciled further downstream).
+- ~~A **Spark Structured Streaming** notebook that consumes `healthcare_fhir_stream`~~ — **done**, see [`spark-structured-streaming.md`](./spark-structured-streaming.md). All 712,809 messages were read back and landed in `data_lake/bronze/streaming_data/`, partitioned by `resource_type`, with a schema identical to batch bronze. That document also covers the `SPARK_HOME` version trap that made it fail six times first.
 - Converting the **gold layer to Delta Lake** so batch and streaming can both write into the *same* gold tables via `MERGE INTO`, instead of the batch notebooks' current full `.mode("overwrite")` rewrite (which would clobber anything streaming had written).
